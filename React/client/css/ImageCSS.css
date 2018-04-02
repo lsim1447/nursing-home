@@ -1,0 +1,71 @@
+#main {
+    width: 35%;
+    height: 0;
+    position: relative;
+    padding-bottom: 35%;
+    margin: auto;
+}
+.blue {
+    background-image: url('http://media.hotbirthdays.com/thumb_x184x184/upload/1926/06/28/mel-brooks.jpg');
+    height:100%;
+    width:100%;
+    position: absolute;
+    -webkit-transform: translate(-75%, 100%) rotate(45deg);
+}
+.green {
+    height:100%;
+    width:100%;
+    position: absolute;
+    background-image: url('http://personalsupportworkerhq.com/wp-content/uploads/2014/04/Nursing-Home-Challenges.jpg');
+    -webkit-transform: translate(0, 25%) rotate(45deg);
+}
+.red {
+    height:100%;
+    width:100%;
+    position: absolute;
+    background-image: url('http://sacredmatrix.com/wp-content/uploads/2014/09/old-couple-image17-156x156.png');
+    -webkit-transform: translate(75%, 100%) rotate(-45deg);
+}
+.yellow {
+    height:100%;
+    width:100%;
+    position: absolute;
+    background-image: url('http://courts.delaware.gov/dnhrqac/agency/img/dnhrqac_mission_obj.jpg');   
+    -webkit-transform: translate(0, 175%) rotate(45deg);
+}
+#container{
+    width:100%;
+    height:100%;
+    max-height:500px;
+    max-width:500px;
+    margin-left: 30%
+}
+
+#lokod{
+    opacity: 0.6;
+    width:20%;
+    border: 6px solid #aaa;
+    -webkit-transform: scale(1.03);
+	transform: scale(1.03);
+	-webkit-transition: .9s ease-in-out;
+	transition: .9s ease-in-out;
+}
+
+#lokod:hover{
+    width: 700px;
+    opacity: 1;
+}
+
+#back{
+    background-image: url('http://2.bp.blogspot.com/-QeXpRVj6H9Q/U5x9Sd3FE4I/AAAAAAAAaz4/bpSsUrA6GZo/s1600/Bagyi+varfesztival_DSC_0030.jpg');
+    background-size: 100%;
+}
+#mainPage{
+    background-image: url('http://farm5.static.flickr.com/4128/5004169467_3b9b43872f_o.jpg');
+    background-size: 150%;
+    min-height: 780px;
+}
+#homePage{
+    background-image: url('https://www.ledr.com/colours/white.jpg');
+    background-size: 150%;
+}

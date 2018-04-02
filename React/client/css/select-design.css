@@ -1,0 +1,89 @@
+.myselect {
+     -moz-appearance: none;
+     position: relative;
+     display: block;
+     font-size: 18px;
+     width: 100%;
+     padding: 10px;
+     text-align: center;
+     text-align-last:center;
+     margin: 0 0 5px;
+     border: 1px solid #ccc;
+}
+.myoption {
+  padding-left: 50px;
+  font-size: 18px;
+}
+:root {
+    --bg: #3C465C;
+    --primary: #78FFCD;
+    --solid: #fff;
+    --btn-w: 10em;
+    --dot-w: calc(var(--btn-w)*.2);
+    --tr-X: calc(var(--btn-w) - var(--btn-w)*.2);
+}
+* {box-sizing: border-box;}
+*:before, *:after {box-sizing: border-box;}
+.btn {
+    background: darkgreen;
+    position: relative;
+    margin: 0 auto;
+    width: var(--btn-w);
+    color: white;
+    border: .15em solid darkgreen;
+    border-radius: 5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 2em;
+    cursor: pointer;    
+}
+.dot {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: var(--dot-w);
+    height: 100%;
+    border-radius: 100%;
+    transition: all 300ms ease;
+    display: none;
+}
+.dot:after {
+    content: '';
+    position: absolute;
+    left: calc(50% - .4em);
+    top: -.4em;
+    height: .8em;
+    width: .8em;
+    background: var(--primary);
+    border-radius: 1em;
+    border: .25em solid var(--solid);
+    box-shadow: 0 0 .7em var(--solid),
+                0 0 2em var(--primary);
+}
+.btn:hover .dot,
+.btn:focus .dot {
+    animation: atom 2s infinite linear;
+    display: block;
+}
+@keyframes atom {
+    0% {transform: translateX(0) rotate(0);}
+    30%{transform: translateX(var(--tr-X)) rotate(0);}
+    50% {transform: translateX(var(--tr-X)) rotate(180deg);}
+    80% {transform: translateX(0) rotate(180deg);}
+    100% {transform: translateX(0) rotate(360deg);}
+}
+.backgr {
+    background-image: url('http://wallpapercave.com/wp/NP7w5kc.jpg');
+     position: fixed;
+     height: 100%;
+     width: 100%;
+}
+#ownSelect{
+    margin-top: 9%;
+    color: white;
+    background-color: #245454;
+    margin-bottom: 0;
+    text-align-last:left;
+    padding-left: 539px;
+}

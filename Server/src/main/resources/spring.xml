@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/exam" />
+        <property name="username" value="root" />
+        <property name="password" value="" />
+    </bean>
+
+
+        <!-- Hibernate 4 SessionFactory Bean definition -->
+    <bean id="hibernate4AnnotatedSessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+            <list>
+                <value>edu.cs.ubb.exam.model.User</value>
+                <value>edu.cs.ubb.exam.model.StorageMed</value>
+                <value>edu.cs.ubb.exam.model.Medicine</value>
+                <value>edu.cs.ubb.exam.model.User</value>
+                <value>edu.cs.ubb.exam.model.help_classes.Stoor</value>
+                <value>edu.cs.ubb.exam.model.Dose</value>
+                <value>edu.cs.ubb.exam.model.Person</value>
+                <value>edu.cs.ubb.exam.model.Types</value>
+                <value>edu.cs.ubb.exam.model.UserType</value>
+                <value>edu.cs.ubb.exam.model.Cure</value>
+                <value>edu.cs.ubb.exam.model.Appointments</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.show_sql">false</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="userDAO" class="edu.cs.ubb.exam.dao.UserDAOImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+    <bean id="storageDAO" class="edu.cs.ubb.exam.dao.StorageMedDAOImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+    <bean id="medicineDAO" class="edu.cs.ubb.exam.dao.MedicineDAOImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+    <bean id="doseDAO" class="edu.cs.ubb.exam.dao.DoseDAOImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+    <bean id="personDAO" class="edu.cs.ubb.exam.dao.PersonDAOImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+    <bean id="medtypeDAO" class="edu.cs.ubb.exam.dao.MedTypeDAOImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+    <bean id="cureDAO" class="edu.cs.ubb.exam.dao.CureDAOImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+</beans>
